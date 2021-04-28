@@ -1,5 +1,6 @@
 package com.donkey.book.springboot.domain.posts;
 
+import com.donkey.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import javax.persistence.Id;
 @Getter // getter 자동 생성, Entity 클래서에서는 절대 Setter 메소드를 만들지 않고, 변경이 필요 할 경우 목적과 의도를 나타낼 수 있는 메소드를 추가하여 사용한다.
 @NoArgsConstructor // 기본 생성자 자동 추가 ex) public Posts(){}
 @Entity // 테이블과 링크될 클래스임을 나타냄, 기본값으로 클래스의 카멜케이스 이름을 언더스코어 네이밍으로 테이블 이름을 매칭한다 ex) SalesManager.java -> sales_manager
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) // GenerationType.IDENTITY 를 추가해야만 auto_increment
