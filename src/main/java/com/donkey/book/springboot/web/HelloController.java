@@ -17,7 +17,7 @@ public class HelloController {
 
     //@RequestParam 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션, 외부 파라미터를  메소드 파라미터에 저장한다.
     @GetMapping("/hello/dto")
-    public HelloResponseDto helloDto(@RequestParam("name") String name, @RequestParam("amount") int amount){
+    public HelloResponseDto helloDto(@RequestParam("name") String name, @RequestParam("amount") int amount) {
         return new HelloResponseDto(name, amount);
     }
 }
